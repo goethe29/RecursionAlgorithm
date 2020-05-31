@@ -1,0 +1,42 @@
+﻿<Window x:Class="Ex004CatalogInfoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex004CatalogInfoWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="362*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TreeView x:Name="treeView"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"   
+                  MouseDown="treeView_MouseUp" 
+                  Margin="10"
+                  Grid.Row="0" Grid.RowSpan="2"/>
+
+        <TextBlock TextWrapping="Wrap"
+                   Grid.Row="2"
+                   Text="{Binding ElementName=treeView, Path=SelectedItem.Tag}" 
+                   Grid.ColumnSpan="2"/>
+        <Button Content="Отобразить" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch" 
+                Margin="10"
+                Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
+        <TextBox x:Name="tx" Grid.Column="1"
+                 HorizontalAlignment="Stretch" 
+                 Margin="10" 
+                 TextWrapping="Wrap" 
+                 Text="C:\Users\i\source\repos\RecursionAlgorithm" 
+                 VerticalAlignment="Stretch"/>
+    </Grid>
+</Window>

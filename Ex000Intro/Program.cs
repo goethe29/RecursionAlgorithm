@@ -13,8 +13,8 @@ namespace Ex000Intro
 
         static void Main(string[] args)
         {
-            Console.WriteLine($"PowRecursion(2,30) = {PowRecursion(2, 30)} {countPR}");
-            Console.WriteLine($"PowIteration(2,30) = {PowIteration(2, 30)} {countPI}");
+            Console.WriteLine($"PowRecursion = {PowRecursion(1, 50000)} {countPR}");
+            Console.WriteLine($"PowIteration = {PowIteration(1, 50000)} {countPI}");
         }
 
 

@@ -13,11 +13,11 @@ namespace Ex003CatalogInfo
         static void CatalogInfo(string Path, string Indent = "")
         {
             DirectoryInfo catalogs = new DirectoryInfo(Path);
-
+            
             foreach (var currentCatalog in catalogs.GetDirectories())
             {
                 Console.WriteLine($"{Indent}{currentCatalog.Name}");
-                CatalogInfo(currentCatalog.FullName, Indent + "\t");
+                CatalogInfo(currentCatalog.FullName, Indent + "  ");
             }
 
             foreach (var item in catalogs.GetFiles())
@@ -29,6 +29,7 @@ namespace Ex003CatalogInfo
 
         static void Main(string[] args)
         {
+            Console.WriteLine("RecursionAlgorithm");
             string path = @"C:\Users\i\source\repos\RecursionAlgorithm";
             CatalogInfo(path);
         }

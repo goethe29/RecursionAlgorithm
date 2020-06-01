@@ -51,16 +51,21 @@ namespace Ex005Coloring
             if(bitPicture[x,y] == 0)
             {
                 bitPicture[x, y] = 2;
+
+                Paint(50, 50, 10);
+                Console.ReadLine();
+
                 Coloring(x-1, y);
                 Coloring(x, y-1);
                 Coloring(x+1, y);
                 Coloring(x, y + 1);
+               
             }
         }
 
         static void Paint(int StartPosX, int StartPosY, int Scale)
         {
-            
+            GraphicsWindow.Clear();
             for (int i = 0; i < bitPicture.GetLength(0); i++)
             {
                 for (int j = 0; j < bitPicture.GetLength(1); j++)

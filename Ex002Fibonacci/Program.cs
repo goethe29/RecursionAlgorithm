@@ -11,7 +11,6 @@ namespace Ex002Fibonacci
     {
         static decimal fRec = 0;
         static decimal fIte = 0;
-        
 
         static decimal FibonacciRecursion(int n)
         {
@@ -22,7 +21,7 @@ namespace Ex002Fibonacci
         static decimal FibonacciIteration(int n)
         {
             fIte++;
-            decimal result = 0;
+            decimal result = 1;
             decimal f0 = 1;
             decimal f1 = 1;
             for (int i = 2; i <= n;  i++)
@@ -40,10 +39,21 @@ namespace Ex002Fibonacci
         {
             //# 1 2 3 4 5 6
             //V 1 1 2 3 5 8
-            int n = 20;
-            Console.WriteLine($"FibonacciRecursion({n}) = {FibonacciRecursion(n)} fRec = {fRec}");
-            Console.WriteLine($"FibonacciIteration({n}) = {FibonacciIteration(n)} fIte = {fIte}");
-          
+            Console.ReadLine();
+            for (int n = 1; n < 40; n++)
+            {
+                Console.WriteLine($"FibonacciIteration({n}) = {FibonacciIteration(n)} fIte = {fIte}");
+                fIte = 0;
+            }
+            Console.WriteLine();
+            Console.ReadLine();
+            for (int n = 1; n < 40; n++)
+            {
+                Console.WriteLine($"FibonacciRecursion({n}) = {FibonacciRecursion(n)} fRec = {fRec}");
+                fRec = 0;
+            }
+            Console.ReadLine();
+
         }
     }
 }

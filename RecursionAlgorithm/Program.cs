@@ -11,15 +11,15 @@ namespace Ex001Factorial
         static int countFR = 0;
         static int countFI = 0;
 
-        static decimal FactorialRecursion(int n)
+        static double FactorialRecursion(int n)
         {
             countFR++;
-            return n == 0 || n == 1 ? 1 : n * FactorialRecursion(n - 1);
+            return n == 0 ? 1 : n * FactorialRecursion(n - 1);
         }
 
-        static decimal FactorialIteration(int n)
+        static double FactorialIteration(int n)
         {
-            decimal result = 1;
+            double result = 1;
             countFI++;
             for (int i = n; i > 1; i--)
             {
@@ -34,10 +34,10 @@ namespace Ex001Factorial
 
         static void Main(string[] args)
         {
-            int n = 10;
-            Console.WriteLine($"n({n}) = {FactorialRecursion(5)} countFR = {countFR}");
-            Console.WriteLine($"n({n}) = {FactorialIteration(5)} countFI = {countFI}");
-
+            int n = 30;
+            Console.WriteLine($"n({n}) = {FactorialRecursion(n)} countFR = {countFR}");
+            Console.WriteLine($"n({n}) = {FactorialIteration(n)} countFI = {countFI}");
+            Console.ReadLine();
         }
     }
 }

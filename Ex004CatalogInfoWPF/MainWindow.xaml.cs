@@ -32,7 +32,6 @@ namespace Ex004CatalogInfoWPF
             foreach (var currentCatalog in catalogs.GetDirectories())
             {
                 t.Items.Add(CatalogInfo(currentCatalog.FullName));
-               
             }
 
             foreach (var current in catalogs.GetFiles())
